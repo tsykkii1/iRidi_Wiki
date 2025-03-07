@@ -1,0 +1,416 @@
+:root {
+    --primary-color: #1C75BC;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --fordark-color: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+    background-color: #f8f9fa;
+    transition: background 0.3s;
+    padding-top: 120px;
+}
+
+
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+body.dark-theme {
+    background-color: #03111b;
+    color: #ffffff;
+}
+
+
+
+.dark-theme .sidebar, .dark-theme .main-content, .dark-theme .content-text, .dark-theme .nav-link, .dark-theme .content-text li, .dark-theme .content-section, .dark-theme .section-title, .dark-theme .card-body, .dark-theme .btn {
+        background-color: #072136;
+        color: #ffffff;
+    }
+
+    .dark-theme .wiki-header, .dark-theme footer {
+        background-color: #072136;
+    }
+
+
+
+.boxed-text {
+    border: 2px solid currentColor;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+
+
+
+.wiki-header {
+    background: var(--primary-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем содержимое */
+}
+
+
+.logo {
+    width: 50%;
+    height: 50%;
+}
+
+.container .my-5 {
+    margin-top: 120px; /* Отступ для контента после фиксированного хедера */
+}
+
+.sidebar {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    margin-top: 48px;
+    top: 120px;
+}
+
+.main-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    background: transparent !important; /* Убираем белый фон */
+    box-shadow: none !important; /* Убираем тень */
+    padding: 0 !important; /* Обнуляем отступы */
+}
+
+.row {
+    align-items: flex-start; /* Выравниваем верхний край колонок */
+}
+
+.col-lg-9 {
+    margin-top: 4px;
+}
+
+
+.nav-link {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.dark-theme .section-title {
+    color: var(--fordark-color);
+    border-bottom: 3px solid var(--fordark-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-card {
+    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 10px;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.search-box {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+footer {
+    background: var(--primary-color);
+    color: white;
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+footer .row {
+    justify-content: center !important;
+    text-align: center;
+}
+
+
+.content-section {
+    display: none;
+    background: white; /* Переносим стили сюда */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+.content-section.active {
+    display: block;
+}
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .sidebar,
+.dark-mode .main-content {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+.platforms-container {
+    margin: 0 -15px;
+    padding: 0 15px;
+}
+
+.platform-header-card {
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+.content-text {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+.content-text h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+}
+
+.content-text ul {
+    padding-left: 1.8rem;
+    margin: 1rem 0;
+}
+
+.content-text ul li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Flexbox адаптивность для карточек */
+.platforms-container .row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    overflow-x: auto; /* Горизонтальный скролл для узких экранов */
+}
+
+/* Для секции "С чего начать" */
+#start .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+#start .col-md-6 {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+.platforms-container {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.platforms-container .row::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    display: none !important;
+    padding: 10px 15px;
+}
+
+.mobile-menu-btn .fas {
+            font-size: 1.5rem;
+        }
+
+
+.sidebar.active {
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.search-suggestions {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    background: #fff !important;
+    color: #fff !important;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 2000;
+    display: none;
+}
+
+.dark-theme .search-suggestions {
+    background: #072136 !important;
+    color: #fff !important;
+    border: 1px solid #56646e;
+}
+
+.light-theme .search-suggestions {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #1C75BC;
+}
+
+        .search-suggestion-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-suggestion-item:hover {
+            background: var(--primary-color) !important;
+            color: white !important;
+        }
+
+.dark-theme .search-suggestion-item,
+.dark-theme .suggestion-section {
+    color: #fff !important;
+}
+
+
+.highlight {
+    background-color: #68a0ce;
+    color: #000 !important;
+    font-weight: bold;
+}
+
+
+.search-suggestions * {
+    pointer-events: auto !important;
+}
+
+.my-5 {
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    grid-template-columns: 4fr 300px;
+}
+
+.search-suggestion-item .suggestion-section {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 1200px) {
+    .my-5 {
+        width: 1000px;
+        grid-template-columns: 1fr 280px;
+    }
+
+}       
+
+@media (max-width: 1000px) {
+    .my-5 {
+        width: 992px;
+        grid-template-columns: 1fr 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .my-5 {
+        width: 480px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media (max-width: 476px) {
+    .my-5 {
+        width: 100%; /* Ширина контейнера на 100% от ширины экрана */
+        grid-template-columns: 1fr; /* Одна колонка для маленьких экранов */
+        padding: 0 10px; /* Добавляем отступы по бокам */
+    }
+
+    .sidebar {
+        margin-top: 20px; /* Уменьшаем отступ для сайдбара */
+        padding: 10px; /* Уменьшаем внутренние отступы */
+    }
+
+    .main-content {
+        padding: 10px; /* Уменьшаем внутренние отступы */
+    }
+
+    .wiki-header {
+        padding: 0.5rem 0; /* Уменьшаем отступы в хедере */
+    }
+
+    .logo {
+        width: 40%; /* Уменьшаем размер логотипа */
+        height: 40%;
+    }
+
+    .search-box {
+        max-width: 100%; /* Поисковая строка на всю ширину */
+    }
+
+    .mobile-menu-btn {
+        display: block !important; /* Показываем кнопку меню на маленьких экранах */
+    }
+
+    .sidebar.active {
+        display: block; /* Показываем сайдбар при активации */
+    }
+
+    .content-section {
+        padding: 15px; /* Уменьшаем отступы в секциях */
+    }
+
+    .content-text {
+        padding: 15px; /* Уменьшаем отступы в текстовых блоках */
+    }
+
+    .article-card {
+        margin-bottom: 10px; /* Уменьшаем отступы между карточками */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Уменьшаем размер заголовков */
+    }
+
+    .nav-link {
+        font-size: 0.9rem; /* Уменьшаем размер текста в навигации */
+    }
+
+    footer {
+        padding: 1rem 0; /* Уменьшаем отступы в футере */
+    }
+}
